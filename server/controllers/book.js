@@ -1,4 +1,6 @@
 const Book = require('../../database/models.js');
+const { token } = require('../config.js');
+const axios = require('axios');
 
 exports.addBook = (req, res) => {
 
@@ -20,5 +22,18 @@ exports.addBook = (req, res) => {
     }
   });
 
+};
 
+exports.searchBooks = async (req, res) => {
+
+  let searchTerm = req.query.searchTerm;
+  let refactoredSearchTerm = searchTerm.replaceAll(' ', '+');
+  let url = `https://www.googleapis.com/books/v1/volumes?q=${refactoredSearchTerm}&maxResults=10&printType=books&projection=lite`;
+  let options = {
+    headers: {
+      key: token
+    }
+  }
+  let books = await axios.get(url, options);
+  res.send(books.data.items);
 };

@@ -1,0 +1,91 @@
+:root {
+  --bookshelf-outside: #A87328;
+  --bookshelf-inside: #534227;
+}
+
+.search-component {
+  margin: auto;
+  width: 75vw;
+  padding-bottom: 50px;
+}
+
+.search-bar {
+  width: 40%;
+  display: inline;
+  font-size: 20px;
+  border: 1px solid #ddd;
+}
+
+button {
+  position: center;
+}
+
+.bookshelf {
+  width: 80vw;
+  border: 10px solid var(--bookshelf-outside);
+  background-color: var(--bookshelf-inside);
+  background-size: 10px 230px;
+  overflow: auto;
+  margin: auto;
+}
+
+.book {
+  height: 200px;
+  width: 40px;
+  margin-top: 20px;
+  background-color: lightblue;
+  transform: translateY(-3px) translateX(15px) rotate(9deg)
+}
+
+.bookshelf-line-break {
+  width: 80vw;
+}
+
+.search-results {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  max-width: 75vw;
+  margin: auto;
+}
+
+.search-result-book {
+  margin-bottom: 20px;
+  width: 230px;
+  height: 475px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgb(225, 228, 225);
+  overflow: scroll;
+}
+
+.search-result-book-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.search-result-book-author {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-size: 16px;
+  text-align: center;
+}
+
+.search-result-book-image {
+  width: 230px;
+  height: 350px;
+}
+
+.search-result-book:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.search-result-book-title {
+  max-width: 230px;
+}
+
+.search-result-book-author {
+  max-width: 230px;
+}
