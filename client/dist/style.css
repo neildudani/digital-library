@@ -7,24 +7,21 @@
   margin: auto;
   width: 75vw;
   padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .search-bar {
   width: 40%;
-  display: inline;
   font-size: 20px;
   border: 1px solid #ddd;
-}
-
-button {
-  position: center;
 }
 
 .bookshelf {
   width: 80vw;
   border: 10px solid var(--bookshelf-outside);
   background-color: var(--bookshelf-inside);
-  background-size: 10px 230px;
+  background-size: 10px 12vw;
   overflow: auto;
   margin: auto;
 }
@@ -52,8 +49,8 @@ button {
 
 .search-result-book {
   margin-bottom: 20px;
-  width: 230px;
-  height: 475px;
+  width: 12vw;
+  height: 26vw;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgb(225, 228, 225);
   overflow: scroll;
@@ -73,8 +70,8 @@ button {
 }
 
 .search-result-book-image {
-  width: 230px;
-  height: 350px;
+  width: 12vw;
+  height: 18vw;
 }
 
 .search-result-book:hover {
@@ -83,9 +80,9 @@ button {
 }
 
 .search-result-book-title {
-  max-width: 230px;
+  max-width: 12vw;
 }
 
 .search-result-book-author {
-  max-width: 230px;
+  max-width: 12vw;
 }

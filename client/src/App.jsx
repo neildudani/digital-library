@@ -9,24 +9,24 @@ import axios from 'axios';
 const App = () => {
 
   const [bookResults, setBookResults] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
+  const updateSearchTerm = (e) => {
+    e.preventDefault();
+    setSearchTerm(e.target.value);
+  };
 
-  const searchBooks = (searchTerm) => {
-    let options = {
-      params: {
-        searchTerm: searchTerm
-      }
-    }
+  const searchBooks = () => {
+    let options = {params: {searchTerm: searchTerm}};
     axios.get('/searchBooks', options)
       .then((books) => {
-        console.log('books: ', books.data);
         setBookResults(books.data);
       })
-  }
+  };
 
   return (
     <div>
-      <SearchBar searchBooks={searchBooks}/>
+      <SearchBar searchBooks={searchBooks} updateSearchTerm={updateSearchTerm}/>
       <SearchResults bookResults={bookResults}/>
       <Bookshelf />
     </div>
