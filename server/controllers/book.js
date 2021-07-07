@@ -5,22 +5,34 @@ const axios = require('axios');
 exports.addBook = (req, res) => {
 
   let doc = {
-    title: 'Thinking Fast And Slow',
-    author: 'Daniel Kahneman',
-    rating: 5,
-    lesson: 'Important to activate system 2 thinking',
-    summary: 'Test summary blah blah blah'
-   };
+    title: req.body.title,
+    author: req.body.author,
+    rating: null,
+    lesson: '',
+    summary: ''
+  };
 
-  let newBook = new Book(doc);
+  Book.find({title: req.body.title}).exec((error, book) => {
 
-  newBook.save(function(err, doc) {
-    if (err) {
-      return console.error(err)
+    if (error) {
+      console.log('error: ', error);
+      res.send('Please try again');
     } else {
-      res.send('add!');
+      if (book.length > 0) {
+        res.send('You already have a copy of this book in your library');
+      } else {
+        let newBook = new Book(doc);
+        newBook.save(function(error, doc) {
+          if (error) {
+            console.log('error: ', error);
+            res.send('Please try again');
+          } else {
+            res.send('Successfully added book to library!');
+          }
+        });
+      }
     }
-  });
+  })
 
 };
 

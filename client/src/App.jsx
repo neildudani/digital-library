@@ -18,15 +18,19 @@ const App = () => {
 
   const searchBooks = () => {
     let options = {params: {searchTerm: searchTerm}};
+    if (searchTerm === '') {return;}
     axios.get('/searchBooks', options)
       .then((books) => {
         setBookResults(books.data);
+      })
+      .then(() => {
+        setSearchTerm('');
       })
   };
 
   return (
     <div>
-      <SearchBar searchBooks={searchBooks} updateSearchTerm={updateSearchTerm}/>
+      <SearchBar searchBooks={searchBooks} updateSearchTerm={updateSearchTerm} searchTerm={searchTerm}/>
       <SearchResults bookResults={bookResults}/>
       <Bookshelf />
     </div>

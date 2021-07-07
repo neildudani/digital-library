@@ -54,28 +54,27 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgb(225, 228, 225);
   overflow: scroll;
+  text-align: center;
+  position: relative;
 }
 
 .search-result-book-title {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
-  text-align: center;
 }
 
 .search-result-book-author {
   font-family: 'Roboto', sans-serif;
   font-style: italic;
   font-size: 16px;
-  text-align: center;
 }
 
 .search-result-book-image {
-  width: 12vw;
+  width: auto;
   height: 18vw;
 }
 
 .search-result-book:hover {
-  cursor: pointer;
   transform: scale(1.05);
 }
 
@@ -86,3 +85,43 @@
 .search-result-book-author {
   max-width: 12vw;
 }
+
+.search-button {
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: green;
+  border: none;
+  border-radius: 15px;
+}
+
+.search-button:active {
+  background-color: green;
+  transform: translateY(4px);
+}
+
+.add-to-library-button {
+  display: inline-block;
+  position: absolute;
+  top: 0.5vw;
+  left: 5vw;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+}
+
+.add-to-library-button:active {
+  background-color: green;
+  transform: translateY(4px);
+}
+

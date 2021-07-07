@@ -7,8 +7,8 @@ const { addBook, searchBooks } = require('./controllers/book.js');
 app.use(express.static(__dirname + '/../client/dist'));
 app.use(express.json());
 
-app.get('/addBook', addBook);
 app.get('/searchBooks', searchBooks)
+app.post('/addBook', addBook);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
