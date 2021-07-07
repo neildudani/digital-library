@@ -28,10 +28,29 @@
 
 .book {
   height: 200px;
-  width: 40px;
-  margin-top: 20px;
+  width: 80px;
+  float: left;
+  color: black;
   background-color: lightblue;
-  transform: translateY(-3px) translateX(15px) rotate(9deg)
+  font-size: 0.9em;
+  font-family: Verdana, sans-serif;
+  margin-top: 20px;
+  transition: transform 0.4s ease;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.book h3 {
+  font-size: 1em;
+  transform-origin: 0% 0%;
+  transform: rotate(0.25turn) translateY(-70px);
+  width: 170px;
+  word-wrap: break-word;
+}
+
+.book:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .bookshelf-line-break {

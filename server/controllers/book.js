@@ -49,3 +49,17 @@ exports.searchBooks = async (req, res) => {
   let books = await axios.get(url, options);
   res.send(books.data.items);
 };
+
+exports.fetchBooks = (req, res) => {
+
+  Book.find({}).exec((error, books) => {
+    if (error) {
+      console.log('error: ', error);
+      res.send('Unable to fetch books!');
+    } else {
+      console.log('books: ', books);
+      res.send(books);
+    }
+  })
+
+};

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import comingSoonPhoto from './../images/image-coming-soon.jpeg';
 import axios from 'axios';
 
-const SearchResultBook = ({book}) => {
+const SearchResultBook = ({book, fetchBooks}) => {
 
   const [toggleAddToLibrary, setToggleAddToLibrary] = useState(false);
 
@@ -18,7 +18,7 @@ const SearchResultBook = ({book}) => {
 
     axios.post('/addBook', options)
       .then(() => {
-        console.log('to update library!');
+          fetchBooks();
       })
   };
 

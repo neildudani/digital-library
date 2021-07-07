@@ -10,6 +10,18 @@ const App = () => {
 
   const [bookResults, setBookResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [library, setLibrary] = useState([]);
+
+  const fetchBooks = () => {
+    axios.get('/fetchBooks')
+      .then((books) => {
+        setLibrary(books.data);
+      })
+  };
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
 
   const updateSearchTerm = (e) => {
     e.preventDefault();
@@ -31,8 +43,8 @@ const App = () => {
   return (
     <div>
       <SearchBar searchBooks={searchBooks} updateSearchTerm={updateSearchTerm} searchTerm={searchTerm}/>
-      <SearchResults bookResults={bookResults}/>
-      <Bookshelf />
+      <SearchResults bookResults={bookResults} fetchBooks={fetchBooks}/>
+      <Bookshelf library={library}/>
     </div>
   )
 
