@@ -10,7 +10,8 @@ exports.addBook = (req, res) => {
     photo_url: req.body.photo_url,
     rating: null,
     lesson: '',
-    summary: ''
+    summary: '',
+    colour: req.body.colour
   };
 
   Book.find({title: req.body.title}).exec((error, book) => {

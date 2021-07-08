@@ -15,14 +15,13 @@ const Bookshelf = ({library, fetchBooks}) => {
     shelves.push(shelf);
   }
 
-
   return (
     <div>
       <hr className="bookshelf-line-break"></hr>
       {shelves.map((shelf, index) => (
         <div className="bookshelf" key={index}>
           {shelf.map((book, index) => (
-            <Book key={index} book={book} fetchBooks={fetchBooks}/>
+            <Book key={index} book={book} fetchBooks={fetchBooks} colourIndex={index % 4}/>
           ))}
         </div>
       ))}

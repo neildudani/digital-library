@@ -37,9 +37,6 @@ const Book = ({book, fetchBooks}) => {
 
   };
 
-  let colours = ['#2c6615', '#0d1747', '#8a2c25', '#471b0d'];
-  let random_colour = colours[Math.floor(Math.random() * colours.length)];
-
   let classNamesObj = [];
 
   for (var i = 0; i <= 2; i++) {
@@ -73,7 +70,7 @@ const Book = ({book, fetchBooks}) => {
             <i className={classNamesObj[1]} onClick={setRating}></i>
             <i className={classNamesObj[2]} onClick={setRating}></i>
           </div>
-        <div className="book" onClick={toggleModal} style={{background: random_colour}}>
+        <div className="book" onClick={toggleModal} style={{background: book.colour}}>
           <h3>{book.title}</h3>
         </div>
       </div>

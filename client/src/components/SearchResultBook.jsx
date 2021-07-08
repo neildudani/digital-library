@@ -8,13 +8,17 @@ const SearchResultBook = ({book, fetchBooks}) => {
 
   let title = book.volumeInfo.title ? book.volumeInfo.title : 'Title unavailable';
   let author = book.volumeInfo.authors ? book.volumeInfo.authors[0] : 'Author unavailable';
-  let src = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : comingSoonPhoto
+  let src = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : comingSoonPhoto;
+
+  let colours = ['#2c6615', '#0d1747', '#8a2c25', '#471b0d'];
+  let random_colour = colours[Math.floor(Math.random() * colours.length)];
 
   const addToLibrary = () => {
     let options = {
       title: title,
       author: author,
-      photo_url: src
+      photo_url: src,
+      colour: random_colour
     };
 
     axios.post('/addBook', options)
