@@ -17,7 +17,6 @@ const Bookshelf = ({library, fetchBooks}) => {
 
   return (
     <div>
-      <hr className="bookshelf-line-break"></hr>
       {shelves.map((shelf, index) => (
         <div className="bookshelf" key={index}>
           {shelf.map((book, index) => (

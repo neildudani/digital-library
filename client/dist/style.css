@@ -136,13 +136,13 @@
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: green;
+  background-color: lightskyblue;
   border: none;
   border-radius: 10px;
 }
 
 .add-to-library-button:active {
-  background-color: green;
+  background-color: lightskyblue;
   transform: translateY(4px);
 }
 
@@ -271,4 +271,31 @@ textarea {
   margin-top: 5px;
   color: green;
   font-size: 20px;
+}
+
+.collapse-search-results-button {
+  display: inline-block;
+  position: absolute;
+  top: 2.5vw;
+  left: 45vw;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: gray;
+  border: none;
+  border-radius: 10px;
+}
+
+.collapse-search-results-button:active {
+  background-color: gray;
+  transform: translateY(4px);
+}
+
+.review-label {
+  font-size: 20px;
+  color: green;
+  font-weight: 600;
 }

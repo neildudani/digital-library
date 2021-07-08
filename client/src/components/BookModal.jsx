@@ -47,11 +47,11 @@ const BookModal = ({book, toggleModal, fetchBooks}) => {
           <h5 className="modal-book-author">{book.author}</h5>
           <img src={book.photo_url} className="modal-image"></img>
           <div>
-            <label htmlFor="lesson">Lesson</label>
+            <label htmlFor="lesson" className="review-label">Lesson</label>
             <textarea id="lesson" value={tempLesson} onChange={updateLesson}/>
           </div>
           <div>
-            <label htmlFor="summary">Summary</label>
+            <label htmlFor="summary" className="review-label">Summary</label>
             <textarea id="summary" value={tempSummary} onChange={updateSummary}></textarea>
           </div>
           <div id="modal-save-changes-container">

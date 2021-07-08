@@ -40,10 +40,14 @@ const App = () => {
       })
   };
 
+  const collapseSearchResults = () => {
+    setBookResults([]);
+  }
+
   return (
     <div>
       <SearchBar searchBooks={searchBooks} updateSearchTerm={updateSearchTerm} searchTerm={searchTerm}/>
-      <SearchResults bookResults={bookResults} fetchBooks={fetchBooks}/>
+      <SearchResults bookResults={bookResults} fetchBooks={fetchBooks} collapseSearchResults={collapseSearchResults}/>
       <Bookshelf library={library} fetchBooks={fetchBooks}/>
     </div>
   )

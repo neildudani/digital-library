@@ -69,7 +69,7 @@ const Book = ({book, fetchBooks}) => {
             <i className={classNamesObj[2]} onClick={setRating}></i>
           </div>
         <div className="book" onClick={toggleModal} style={{background: book.colour}}>
-          <h3>{book.title}</h3>
+          <h3>{book.title.slice(0, 60)}</h3>
         </div>
       </div>
       {modalOpen && <BookModal book={book} toggleModal={toggleModal} fetchBooks={fetchBooks}/>}
