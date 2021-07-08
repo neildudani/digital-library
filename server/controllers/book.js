@@ -9,8 +9,8 @@ exports.addBook = (req, res) => {
     author: req.body.author,
     photo_url: req.body.photo_url,
     rating: null,
-    lesson: '',
     summary: '',
+    lesson: '',
     colour: req.body.colour
   };
 
@@ -70,4 +70,11 @@ exports.setRating = (req, res) => {
     .then(() => {
       res.send('Set rating succesfully');
     })
+}
+
+exports.addReview = (req, res) => {
+  Book.findOneAndUpdate({title: req.body.title}, {lesson: req.body.lesson, summary: req.body.summary}, {upsert: true, new: true})
+  .then(() => {
+    res.send('Set rating succesfully');
+  })
 }

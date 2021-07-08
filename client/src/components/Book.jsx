@@ -5,8 +5,6 @@ import axios from 'axios';
 
 const Book = ({book, fetchBooks}) => {
 
-  console.log('book rating: ', book.rating);
-
   const [modalOpen, setModalOpen] = useState(false);
 
   const toggleModal = () => {
@@ -52,12 +50,12 @@ const Book = ({book, fetchBooks}) => {
     }
 
     let classes = classNames({
-    'fas fa-star': true,
-    'three-star': i === 0,
-    'two-star': i === 1,
-    'one-star': i === 2,
-    'yellow-star': colourYellow,
-    'gray-star': !colourYellow
+      'fas fa-star': true,
+      'three-star': i === 0,
+      'two-star': i === 1,
+      'one-star': i === 2,
+      'yellow-star': colourYellow,
+      'gray-star': !colourYellow
     });
     classNamesObj.push(classes);
   }
@@ -74,7 +72,7 @@ const Book = ({book, fetchBooks}) => {
           <h3>{book.title}</h3>
         </div>
       </div>
-      {modalOpen && <BookModal book={book} toggleModal={toggleModal}/>}
+      {modalOpen && <BookModal book={book} toggleModal={toggleModal} fetchBooks={fetchBooks}/>}
     </div>
     )
   ;

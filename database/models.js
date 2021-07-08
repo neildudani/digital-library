@@ -5,8 +5,8 @@ const bookSchema = new mongoose.Schema({
   author: String,
   photo_url: String,
   rating: Number,
-  lesson: String,
   summary: String,
+  lesson: String,
   colour: String
 });
 
