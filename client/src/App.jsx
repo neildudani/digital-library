@@ -44,7 +44,7 @@ const App = () => {
     <div>
       <SearchBar searchBooks={searchBooks} updateSearchTerm={updateSearchTerm} searchTerm={searchTerm}/>
       <SearchResults bookResults={bookResults} fetchBooks={fetchBooks}/>
-      <Bookshelf library={library}/>
+      <Bookshelf library={library} fetchBooks={fetchBooks}/>
     </div>
   )
 

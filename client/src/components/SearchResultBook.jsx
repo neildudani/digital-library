@@ -13,7 +13,8 @@ const SearchResultBook = ({book, fetchBooks}) => {
   const addToLibrary = () => {
     let options = {
       title: title,
-      author: author
+      author: author,
+      photo_url: src
     };
 
     axios.post('/addBook', options)

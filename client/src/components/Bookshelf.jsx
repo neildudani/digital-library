@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Book from './Book.jsx';
 
-const Bookshelf = ({library}) => {
+const Bookshelf = ({library, fetchBooks}) => {
 
   //refactor library into shelves
   let shelves = [];
@@ -21,9 +22,7 @@ const Bookshelf = ({library}) => {
       {shelves.map((shelf, index) => (
         <div className="bookshelf" key={index}>
           {shelf.map((book, index) => (
-            <div className="book" key={index}>
-              <h3>{book.title}</h3>
-            </div>
+            <Book key={index} book={book} fetchBooks={fetchBooks}/>
           ))}
         </div>
       ))}

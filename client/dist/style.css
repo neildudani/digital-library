@@ -26,18 +26,25 @@
   margin: auto;
 }
 
+.book-container {
+  height: 250px;
+  width: 80px;
+  float: left;
+  position: relative;
+}
+
 .book {
-  height: 200px;
+  height: 210px;
   width: 80px;
   float: left;
   color: black;
   background-color: lightblue;
   font-size: 0.9em;
   font-family: Verdana, sans-serif;
-  margin-top: 20px;
   transition: transform 0.4s ease;
   border-left: 2px solid black;
   border-right: 2px solid black;
+  position: relative;
 }
 
 .book h3 {
@@ -69,7 +76,7 @@
 .search-result-book {
   margin-bottom: 20px;
   width: 12vw;
-  height: 26vw;
+  height: 20vw;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgb(225, 228, 225);
   overflow: scroll;
@@ -90,7 +97,7 @@
 
 .search-result-book-image {
   width: auto;
-  height: 18vw;
+  height: 14vw;
 }
 
 .search-result-book:hover {
@@ -144,3 +151,79 @@
   transform: translateY(4px);
 }
 
+.modal-overlay {
+  background-color: rgba(78, 77, 77, 0.794);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom:0;
+  width: 100%;
+  z-index: 2;
+}
+
+.modal {
+  background-color: #ffffff;
+  margin: 250px auto 0;
+  padding: 25px;
+  width: 50vw;
+  height: 40vw;
+}
+
+.modal-image {
+  height: 12vw;
+  width: 7vw;
+}
+
+.modal-close-button {
+  display: block;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: green;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 1vw;
+}
+
+.modal-close-button:active {
+  background-color: green;
+  transform: translateY(4px);
+}
+
+.modal-book-title {
+  text-align: center;
+}
+
+.stars {
+  margin-top: 10px;
+}
+
+.fa-star {
+  color: gray;
+  float: right;
+  margin-bottom: 15px;
+}
+
+.fa-star:hover {
+  cursor: pointer;
+}
+
+.fa-star:hover ~ .fas, .fa-star:hover {
+  color: yellow;
+}
+
+.three-star {
+  margin-right: 10px;
+}
+
+.yellow-star {
+  color: yellow;
+}
+
+.gray-star {
+  color: gray;
+}

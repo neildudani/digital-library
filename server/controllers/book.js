@@ -7,6 +7,7 @@ exports.addBook = (req, res) => {
   let doc = {
     title: req.body.title,
     author: req.body.author,
+    photo_url: req.body.photo_url,
     rating: null,
     lesson: '',
     summary: ''
@@ -57,9 +58,15 @@ exports.fetchBooks = (req, res) => {
       console.log('error: ', error);
       res.send('Unable to fetch books!');
     } else {
-      console.log('books: ', books);
       res.send(books);
     }
   })
 
 };
+
+exports.setRating = (req, res) => {
+  Book.findOneAndUpdate({title: req.body.title}, {rating: req.body.rating}, {upsert: true, new: true})
+    .then(() => {
+      res.send('Set rating succesfully');
+    })
+}

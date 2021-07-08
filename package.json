@@ -10,6 +10,7 @@
     "@babel/preset-react": "^7.14.5",
     "axios": "^0.21.1",
     "babel-loader": "^8.2.2",
+    "classnames": "^2.3.1",
     "express": "^4.17.1",
     "mongoose": "^5.13.2",
     "nodemon": "^2.0.9",
