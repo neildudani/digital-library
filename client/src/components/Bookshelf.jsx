@@ -5,9 +5,9 @@ const Bookshelf = ({library, fetchBooks}) => {
 
   //refactor library into shelves
   let shelves = [];
-  for (var i = 0; i < library.length; i+=20) {
+  for (var i = 0; i < library.length; i+=15) {
     let shelf = [];
-    for (var j = i; j < i + 20; j++) {
+    for (var j = i; j < i + 15; j++) {
       if (j < library.length) {
         shelf.push(library[j]);
       }
