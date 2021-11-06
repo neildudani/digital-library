@@ -1,10 +1,7 @@
 # My Digital Library #
 
-## Sub-Heading ##
-  > People who want to keep a digital record of books they have read and their notes / summary on the book.
-
 ## Summary ##
-  > You can search for a book and add it to your digital library. You can assign it a rating out of 5 and add a summary for each book.
+  > People who want to keep a digital record of books they have read and their notes / summary on the book. You can search for a book and add it to your digital library. You can assign it a rating out of 5 and add a summary for each book.
 
 ## Problem ##
   > Single centralized place to store your book reviews / notes in a customized format
